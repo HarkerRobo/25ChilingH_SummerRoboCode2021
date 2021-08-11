@@ -27,6 +27,7 @@ public class Drivetrain extends SubsystemBase
         leftFollowerMotor = new VictorSPX(MOTOR_ID_LEFT_FOLLOW);
         rightMasterMotor = new HSTalon(MOTOR_ID_RIGHT_MASTER);
         rightFollowerMotor = new VictorSPX(MOTOR_ID_RIGHT_FOLLOW);
+        talonInit();
 
     }
     public void talonInit()
