@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import harkerrobolib.wrappers.HSTalon;
@@ -10,22 +11,22 @@ public class Drivetrain extends SubsystemBase
     private static Drivetrain instance;
     private HSTalon leftMasterMotor;
     private HSTalon rightMasterMotor;
-    private HSTalon leftFollowerMotor;
-    private HSTalon rightFollowerMotor;
-    public static final int MOTOR_ID_LEFT_MASTER = 0;
-    public static final int MOTOR_ID_LEFT_FOLLOW = 0;
-    public static final int MOTOR_ID_RIGHT_MASTER = 0;
-    public static final int MOTOR_ID_RIGHT_FOLLOW = 0;
-    public static final boolean IS_INVERTED_LEFT_MASTER = false;
-    public static final boolean IS_INVERTED_LEFT_FOLLOWER = false;
+    private VictorSPX leftFollowerMotor;
+    private VictorSPX rightFollowerMotor;
+    public static final int MOTOR_ID_LEFT_MASTER = 4;
+    public static final int MOTOR_ID_LEFT_FOLLOW = 4;
+    public static final int MOTOR_ID_RIGHT_MASTER = 1;
+    public static final int MOTOR_ID_RIGHT_FOLLOW = 1;
+    public static final boolean IS_INVERTED_LEFT_MASTER = true;
+    public static final boolean IS_INVERTED_LEFT_FOLLOWER = true;
     public static final boolean IS_INVERTED_RIGHT_MASTER = false;
     public static final boolean IS_INVERTED_RIGHT_FOLLOWER = false;
     private Drivetrain()
     {
         leftMasterMotor = new HSTalon(MOTOR_ID_LEFT_MASTER);
-        leftFollowerMotor = new HSTalon(MOTOR_ID_LEFT_FOLLOW);
+        leftFollowerMotor = new VictorSPX(MOTOR_ID_LEFT_FOLLOW);
         rightMasterMotor = new HSTalon(MOTOR_ID_RIGHT_MASTER);
-        rightFollowerMotor = new HSTalon(MOTOR_ID_RIGHT_FOLLOW);
+        rightFollowerMotor = new VictorSPX(MOTOR_ID_RIGHT_FOLLOW);
 
     }
     public void talonInit()
@@ -50,4 +51,4 @@ public class Drivetrain extends SubsystemBase
         }
         return instance;
     }
-}
+} 
