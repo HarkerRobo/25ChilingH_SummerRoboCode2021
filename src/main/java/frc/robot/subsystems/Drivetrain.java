@@ -39,10 +39,8 @@ public class Drivetrain extends SubsystemBase
     }
     public void setArcadeDrive(double turn, double drive)
     {
-
         leftMasterMotor.set(ControlMode.PercentOutput, drive+turn);
-        rightMasterMotor.set(ControlMode.PercentOutput, drive-turn);
-        
+        rightMasterMotor.set(ControlMode.PercentOutput, drive-turn); 
     }
     public static Drivetrain getInstance()
     {
