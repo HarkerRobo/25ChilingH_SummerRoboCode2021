@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Intake;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -24,6 +25,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     Drivetrain.getInstance().setDefaultCommand(new ArcadeDrive());
     OI.getInstance();
+    Intake.getInstance();
     
   }
 

@@ -1,5 +1,6 @@
 package frc.robot;
 
+import frc.robot.commands.IntakeManual;
 import harkerrobolib.wrappers.HSGamepad;
 import harkerrobolib.wrappers.XboxGamepad;
 
@@ -14,7 +15,7 @@ public class OI {
     }
     public void initBindings()
     {
-
+        driver.getButtonA().whilePressed(new IntakeManual(0.7));
     }
     public static OI getInstance()
     {
@@ -28,5 +29,6 @@ public class OI {
     {
         return driver;
     }
+    
 
 }
