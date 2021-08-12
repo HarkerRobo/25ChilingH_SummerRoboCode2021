@@ -11,12 +11,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Intake extends SubsystemBase{
     private static Intake instance;
     private CANSparkMax motor;
-    public static final int CAN_ID = 0;
+    public static final int CAN_ID = 1;
     public static final boolean IS_INVERTED = false;
 
     private DoubleSolenoid doubleS;
-    public static final int DOUBLE_S_ID1 = 0;
-    public static final int DOUBLE_S_ID2 = 0;
+    public static final int DOUBLE_S_ID1 = 2;
+    public static final int DOUBLE_S_ID2 = 3;
 
     private Intake()
     {
