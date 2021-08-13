@@ -18,7 +18,7 @@ public class OI {
     }
     public void initBindings()
     {
-        driver.getButtonA().whilePressed(new IntakeManual(0.7));
+        driver.getButtonA().whilePressed(new IntakeManual(0.3));
         driver.getButtonB().whenPressed(new ToggleSolenoid());
         driver.getButtonX().whenPressed(new ToggleExtenderSolenoid());
         driver.getButtonY().whenPressed(new ToggleFlowerSolenoid());
