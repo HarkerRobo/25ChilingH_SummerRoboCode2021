@@ -12,7 +12,7 @@ public class ToggleFlowerSolenoid extends InstantCommand{
     {
         HatchLatcher.getInstance().toggleFlower();
     }
-     public void execute()
+    public void execute()
     {
 
     }

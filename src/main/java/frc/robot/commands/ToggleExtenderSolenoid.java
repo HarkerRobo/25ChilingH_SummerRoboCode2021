@@ -12,7 +12,7 @@ public class ToggleExtenderSolenoid extends InstantCommand{
     {
         HatchLatcher.getInstance().toggleExtender();
     }
-     public void execute()
+    public void execute()
     {
 
     }
