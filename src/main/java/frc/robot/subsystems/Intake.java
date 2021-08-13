@@ -1,16 +1,16 @@
 package frc.robot.subsystems;
 
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import harkerrobolib.wrappers.HSFalcon;
 
 
 public class Intake extends SubsystemBase{
     private static Intake instance;
-    private CANSparkMax motor;
+    private HSFalcon motor;
     public static final int CAN_ID = 1;
     public static final boolean IS_INVERTED = false;
 
@@ -20,7 +20,7 @@ public class Intake extends SubsystemBase{
 
     private Intake()
     {
-        motor = new CANSparkMax(CAN_ID, MotorType.kBrushless);
+        motor = new HSFalcon(CAN_ID);
         doubleS = new DoubleSolenoid(DOUBLE_S_ID1, DOUBLE_S_ID2);
     }
     public static Intake getInstance()
@@ -31,13 +31,13 @@ public class Intake extends SubsystemBase{
         }
         return instance;
     }
-    public CANSparkMax getMotor()
+    public HSFalcon getMotor()
     {
         return motor;
     }
     public void setMotor(double speed)
     {
-        motor.set(speed);
+        motor.set(ControlMode.PercentOutput, speed);
     }
     public void toggle()
     {

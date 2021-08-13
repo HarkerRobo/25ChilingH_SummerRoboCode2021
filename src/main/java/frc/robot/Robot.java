@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.subsystems.HatchLatcher;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Intake;
 
@@ -26,6 +27,7 @@ public class Robot extends TimedRobot {
     Drivetrain.getInstance().setDefaultCommand(new ArcadeDrive());
     OI.getInstance();
     Intake.getInstance();
+    HatchLatcher.getInstance();
     
   }
 
