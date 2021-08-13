@@ -11,7 +11,7 @@ import harkerrobolib.wrappers.HSFalcon;
 public class Intake extends SubsystemBase{
     private static Intake instance;
     private HSFalcon motor;
-    public static final int CAN_ID = 1;
+    public static final int CAN_ID = 0;
     public static final boolean IS_INVERTED = false;
 
     private DoubleSolenoid doubleS;
